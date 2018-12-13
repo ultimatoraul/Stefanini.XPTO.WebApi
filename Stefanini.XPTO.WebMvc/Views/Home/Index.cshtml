@@ -1,0 +1,48 @@
+﻿@using Stefanini.XPTO.WebMvc.Models;
+@model List<ProductClient>
+@{
+    ViewBag.Title = "Importar Dados";
+}
+@using (Html.BeginForm("ImportarTxt", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+  <div class="table">
+    <div class="form-group">
+      <label for="postedFile">Escolha um arquivo para importar</label>
+      <input type="file" class="form-control-file" name="postedFile">
+    </div>
+    <button type="submit" class="btn btn-primary">Importar</button>
+  </div>
+}
+
+@if (Model.Count() > 0)
+{
+  <hr />
+  <div class="table">
+    <table id="horariosDisponiveis" class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th class="visible text-center">Produto</th>
+          <th class="visible text-center">Proprietário</th>
+          <th class="visible text-center">Sexo</th>
+          <th class="visible text-center">Data de Nascimento</th>
+          <th class="visible text-center">Email</th>
+          <th class="visible text-center">Ativo</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (ProductClient item in Model)
+        {
+          string ativo = item.Client.Active == 1 ? "SIM" : "NÃO";
+          <tr>
+            <td class="visible text-center">@item.Product.Name</td>
+            <td class="visible text-center">@item.Client.FirstName @item.Client.LastName</td>
+            <td class="visible text-center">@item.Client.Gender</td>
+            <td class="visible text-center">@item.Client.BirthDate.ToString("dd/MM/yyyy")</td>
+            <td class="visible text-center">@item.Client.Email</td>
+            <td class="visible text-center">@ativo</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+}
