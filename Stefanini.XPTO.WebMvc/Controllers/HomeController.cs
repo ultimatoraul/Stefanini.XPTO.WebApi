@@ -21,8 +21,9 @@ namespace Stefanini.XPTO.WebMvc.Controllers {
 
       List<ProductClient> ObjData = new List<ProductClient>();
       List<ProductClient> Model = new List<ProductClient>();
-      #region Processamento...
+
       using (var client = new HttpClient()) {
+        #region Processamento...
         client.BaseAddress = new Uri(baseUrl);
         client.DefaultRequestHeaders.Clear();
         client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -46,10 +47,9 @@ namespace Stefanini.XPTO.WebMvc.Controllers {
           }
           Model.Add(data);
         }
-
         return View(Model);
+        #endregion
       }
-      #endregion
     }
 
     [HttpPost]
@@ -66,10 +66,7 @@ namespace Stefanini.XPTO.WebMvc.Controllers {
           string extension = Path.GetExtension(postedFile.FileName);
           postedFile.SaveAs(filePath);
 
-          //Read the contents of CSV file.
-          //string csvData = System.IO.File.ReadAllText(filePath);
           Encoding Enc = GetFileEncoding(filePath);
-
 
           string baseUrl = ConfigurationManager.AppSettings["baseURL"];
           string importedTxt;
@@ -117,11 +114,11 @@ namespace Stefanini.XPTO.WebMvc.Controllers {
                 Response.Add(client.PostAsync("api/ProductClients", ProductClients, new JsonMediaTypeFormatter()).Result);
               }
             }
-          }       
+          }
           #endregion
         }
         catch (Exception ex) {
-          //CRIAR TRATATIVA
+          //RETORNO NÃO TRATADO :/
           return View(ex);
         }
         finally {
@@ -130,7 +127,6 @@ namespace Stefanini.XPTO.WebMvc.Controllers {
           }
         }
       }
-
       return RedirectToAction("Index", "Home");
     }
 
