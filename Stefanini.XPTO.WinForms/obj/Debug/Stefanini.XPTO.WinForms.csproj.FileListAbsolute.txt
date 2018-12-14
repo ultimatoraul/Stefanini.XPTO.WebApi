@@ -24,6 +24,7 @@ C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WinForms\bin\Debug\EntityFramework.
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WinForms\bin\Debug\Newtonsoft.Json.pdb
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WinForms\bin\Debug\Newtonsoft.Json.xml
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WinForms\bin\Debug\System.Net.Http.Formatting.xml
+C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WinForms\obj\Debug\Stefanini.XPTO.WinForms.csprojAssemblyReference.cache
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WinForms\obj\Debug\Stefanini.XPTO.WinForms.Form1.resources
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WinForms\obj\Debug\Stefanini.XPTO.WinForms.Properties.Resources.resources
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WinForms\obj\Debug\Stefanini.XPTO.WinForms.csproj.GenerateResource.cache
@@ -31,4 +32,3 @@ C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WinForms\obj\Debug\Stefanini.XPTO.W
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WinForms\obj\Debug\Stefanini.XPTO.WinForms.csproj.CopyComplete
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WinForms\obj\Debug\Stefanini.XPTO.WinForms.exe
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WinForms\obj\Debug\Stefanini.XPTO.WinForms.pdb
-C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WinForms\obj\Debug\Stefanini.XPTO.WinForms.csprojAssemblyReference.cache

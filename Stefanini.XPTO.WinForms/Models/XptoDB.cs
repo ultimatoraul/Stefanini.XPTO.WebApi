@@ -6,7 +6,7 @@ namespace Stefanini.XPTO.WinForms.Models {
 
   public partial class XptoDB : DbContext {
     public XptoDB()
-        : base("name=XptoDB") {
+        : base("name=XptoContext") {
     }
 
     public virtual DbSet<Client> Clients { get; set; }

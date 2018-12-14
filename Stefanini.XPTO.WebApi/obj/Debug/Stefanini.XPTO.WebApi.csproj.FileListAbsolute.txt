@@ -126,4 +126,3 @@ C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\obj\Debug\Stefanini.XPTO.Web
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\obj\Debug\Stefanini.XPTO.WebApi.csproj.CopyComplete
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\obj\Debug\Stefanini.XPTO.WebApi.dll
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\obj\Debug\Stefanini.XPTO.WebApi.pdb
-C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\obj\Debug\Stefanini.XPTO.WebApi.csprojAssemblyReference.cache

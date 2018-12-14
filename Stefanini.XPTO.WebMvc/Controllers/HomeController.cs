@@ -97,7 +97,7 @@ namespace Stefanini.XPTO.WebMvc.Controllers {
             }
             else if (data.Length == 3) {
               Product Produto = new Product {
-                ID = int.Parse(data[1]),
+                ID = int.Parse(data[0]),
                 Name = data[2]
               };
               using (var client = new HttpClient()) {
@@ -106,8 +106,8 @@ namespace Stefanini.XPTO.WebMvc.Controllers {
               }
 
               ProductClient ProductClients = new ProductClient() {
-                ClientID = int.Parse(data[0]),
-                ProductID = int.Parse(data[1])
+                ProductID = int.Parse(data[0]),
+                ClientID = int.Parse(data[1])
               };
               using (var client = new HttpClient()) {
                 client.BaseAddress = new Uri(baseUrl);
