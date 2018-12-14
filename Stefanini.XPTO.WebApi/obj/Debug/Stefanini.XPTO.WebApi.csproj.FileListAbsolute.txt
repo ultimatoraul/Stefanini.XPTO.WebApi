@@ -120,10 +120,10 @@ C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\bin\pt-br\System.Web.Razor.r
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\bin\pt-br\System.Web.WebPages.resources.dll
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\bin\pt-br\System.Web.WebPages.Razor.resources.dll
+C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\obj\Debug\Stefanini.XPTO.WebApi.Migrations.Initial.resources
+C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\obj\Debug\Stefanini.XPTO.WebApi.csproj.GenerateResource.cache
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\obj\Debug\Stefanini.XPTO.WebApi.csproj.CoreCompileInputs.cache
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\obj\Debug\Stefanini.XPTO.WebApi.csproj.CopyComplete
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\obj\Debug\Stefanini.XPTO.WebApi.dll
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\obj\Debug\Stefanini.XPTO.WebApi.pdb
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\obj\Debug\Stefanini.XPTO.WebApi.csprojAssemblyReference.cache
-C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\obj\Debug\Stefanini.XPTO.WebApi.Migrations.Initial.resources
-C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebApi\obj\Debug\Stefanini.XPTO.WebApi.csproj.GenerateResource.cache

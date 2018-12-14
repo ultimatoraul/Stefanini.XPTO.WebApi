@@ -68,6 +68,7 @@ C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\Microsoft.ApplicationIns
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\Microsoft.Web.Infrastructure.dll
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\Newtonsoft.Json.dll
+C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\System.Net.Http.Formatting.dll
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\System.Web.Helpers.dll
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\System.Web.Mvc.dll
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\System.Web.Optimization.dll
@@ -79,6 +80,7 @@ C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\WebGrease.dll
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\EntityFramework.xml
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\EntityFramework.SqlServer.xml
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\System.Net.Http.Formatting.xml
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\System.Web.Helpers.xml
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\System.Web.Mvc.xml
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\System.Web.Optimization.xml
@@ -104,5 +106,4 @@ C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\obj\Debug\Stefanini.XPTO.Web
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\obj\Debug\Stefanini.XPTO.WebMvc.csproj.CopyComplete
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\obj\Debug\Stefanini.XPTO.WebMvc.dll
 C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\obj\Debug\Stefanini.XPTO.WebMvc.pdb
-C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\System.Net.Http.Formatting.dll
-C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\bin\System.Net.Http.Formatting.xml
+C:\WORK\Stefanini.XPTO.WebApi\Stefanini.XPTO.WebMvc\obj\Debug\Stefanini.XPTO.WebMvc.csprojAssemblyReference.cache

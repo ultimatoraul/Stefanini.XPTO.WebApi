@@ -24,10 +24,10 @@ namespace Stefanini.XPTO.WinForms {
       //ATENÇÃO!!!
       //É UMA SOLUÇÃO PERIGOSA POIS ELA BLOQUEIA A THREAD ENQUANTO EM EXECUÇÃO
       //PRECISARIA DE MAIS TEMPO PARA ESTUDAR E IMPLEMENTAR UMA MELHOR SOLUÇÂO
-      Task.Run(() => this.TesteAsync()).Wait();
+      Task.Run(() => this.GetDataAsync()).Wait();
     }
 
-    public async Task TesteAsync() {
+    public async Task GetDataAsync() {
       try {
         #region Processamento...
         string baseUrl = System.Configuration.ConfigurationManager.AppSettings["baseURL"];
@@ -75,42 +75,35 @@ namespace Stefanini.XPTO.WinForms {
             Model[a].Client.Active});
           }
           dataGridView1.DataSource = dt;
-          #endregion
         }
+        #endregion
       }
       catch (Exception) {
-        DialogResult result = MessageBox.Show("Verifique se foi configurado corretamente a baseURL no App.config", "Erro",
+        MessageBox.Show("Verifique se foi configurado corretamente a baseURL no App.config", "Erro",
                MessageBoxButtons.OK);
         return;
       }
     }
 
     private void button1_Click(object sender, EventArgs e) {
-      string baseUrl = System.Configuration.ConfigurationManager.AppSettings["baseURL"];
+      
       OpenFileDialog openFileDialog1 = new OpenFileDialog();
-      int size = -1;
       DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
       if (result == DialogResult.OK) // Test result.
       {
         string file = openFileDialog1.FileName;
         try {
+          #region Processamento...
+          string baseUrl = System.Configuration.ConfigurationManager.AppSettings["baseURL"];
           string text = File.ReadAllText(file);
-          //size = text.Length;
           
           System.IO.FileInfo fInfo = new System.IO.FileInfo(openFileDialog1.FileName);
 
           string strFileName = fInfo.Name;
           string strFilePath = fInfo.DirectoryName;          
 
-          Encoding Enc = GetFileEncoding(strFilePath);
-          
-          string importedTxt;
-          using (StreamReader reader = new StreamReader(strFilePath, Enc)) {
-            importedTxt = reader.ReadToEnd();
-          }
-
           List<HttpResponseMessage> Response = new List<HttpResponseMessage>();
-          string[] contents = importedTxt.Split(';');
+          string[] contents = text.Split(';');
           foreach (string content in contents) {
             string[] data = content.Split(',');
             if (data.Length == 7) {
@@ -127,7 +120,7 @@ namespace Stefanini.XPTO.WinForms {
                   Active = data[6] == "true" ? 1 : 0
                 };
                 client.BaseAddress = new Uri(baseUrl);
-                //Response.Add(client.PostAsJsonAsync("api/Clients", Cliente).Result);
+                Response.Add(client.PostAsJsonAsync("api/Clients", Cliente).Result);
               }
             }
             else if (data.Length == 3) {
@@ -137,7 +130,7 @@ namespace Stefanini.XPTO.WinForms {
               };
               using (var client = new HttpClient()) {
                 client.BaseAddress = new Uri(baseUrl);
-                //Response.Add(client.PostAsync("api/Products", Produto, new JsonMediaTypeFormatter()).Result);
+                Response.Add(client.PostAsync("api/Products", Produto, new JsonMediaTypeFormatter()).Result);
               }
 
               ProductClient ProductClients = new ProductClient() {
@@ -146,65 +139,18 @@ namespace Stefanini.XPTO.WinForms {
               };
               using (var client = new HttpClient()) {
                 client.BaseAddress = new Uri(baseUrl);
-                //Response.Add(client.PostAsync("api/ProductClients", ProductClients, new JsonMediaTypeFormatter()).Result);
+                Response.Add(client.PostAsync("api/ProductClients", ProductClients, new JsonMediaTypeFormatter()).Result);
               }
             }
           }
+          #endregion
         }
         catch (IOException) {
+          MessageBox.Show("Verifique se o arquivo importado está no formato correto", "Erro",
+                 MessageBoxButtons.OK);
+          return;
         }
       }
-      //Console.WriteLine(size); // <-- Shows file size in debugging mode.
-      //Console.WriteLine(result); // <-- For debugging use.
-    }
-
-    public Encoding GetFileEncoding(string srcFile) {
-      Encoding enc = Encoding.Default;
-      //FileStream file;
-      byte[] buffer = new byte[10];
-      FileStream file = new FileStream(srcFile, FileMode.Open, FileAccess.Read, FileShare.Read);
-      //using (var stream = File.Open(srcFile, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)) {
-      //  file = stream;//do something with the stream here
-      //}
-      //FileStream file = new FileStream(srcFile, FileMode.Open, FileAccess.Read);
-      file.Read(buffer, 0, 10);
-      file.Close();
-
-      if (buffer[0] == 0xef && buffer[1] == 0xbb && buffer[2] == 0xbf)
-        enc = Encoding.UTF8;
-      else if (buffer[0] == 0xfe && buffer[1] == 0xff)
-        enc = Encoding.Unicode;
-      else if (buffer[0] == 0 && buffer[1] == 0 && buffer[2] == 0xfe && buffer[3] == 0xff)
-        enc = Encoding.UTF32;
-      else if (buffer[0] == 0x2b && buffer[1] == 0x2f && buffer[2] == 0x76)
-        enc = Encoding.UTF7;
-      else if (buffer[0] == 0xFE && buffer[1] == 0xFF)
-        // 1201 unicodeFFFE Unicode (Big-Endian)
-        enc = Encoding.GetEncoding(1201);
-      else if (buffer[0] == 0xFF && buffer[1] == 0xFE)
-        // 1200 utf-16 Unicode
-        enc = Encoding.GetEncoding(1200);
-      else if (ValidateUtf8whitBOM(srcFile))
-        enc = Encoding.Unicode;
-
-      return enc;
-    }
-
-    private bool ValidateUtf8whitBOM(string FileSource) {
-      bool bReturn = false;
-      string TextUTF8 = "", TextANSI = "";
-      StreamReader srFileWhitBOM = new StreamReader(FileSource);
-      TextUTF8 = srFileWhitBOM.ReadToEnd();
-      srFileWhitBOM.Close();
-      srFileWhitBOM = new StreamReader(FileSource, Encoding.Default, false);
-
-      TextANSI = srFileWhitBOM.ReadToEnd();
-      srFileWhitBOM.Close();
-      // if the file contains special characters is UTF8 text read ansi show signs
-
-      if (TextANSI.Contains("Ã") || TextANSI.Contains("±"))
-        bReturn = true;
-      return bReturn;
-    }
+    }   
   }
 }
